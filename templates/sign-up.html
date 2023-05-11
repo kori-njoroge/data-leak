@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='app.css')}}">
     <title>Document</title>
 </head>
+
 <body>
-    <i class="fa-solid fa-gear fa-spin fa-2x"></i>
+    <div class="singup-form">
+        <i class="fa-solid fa-gear fa-spin fa-3x"></i>
+        <form action="">
+            <div class="">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+                <label for="role">Role:</label>
+                <input type="text" name="role" id="role">
+            </div>
+            <div class="">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+                <label for="confpass">Confirm Password:</label>
+                <input type="password" name="confpass" id="confpass">
+            </div>
+                <button>Submit</button>
+        </form>
+    </div>
 </body>
+
 </html>

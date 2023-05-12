@@ -1,11 +1,11 @@
-from flask import Blueprint, render_template, url_for,redirect,flash
+from flask import Blueprint, render_template, url_for,redirect,flash,request
 from sqlalchemy import create_engine, Column, Integer,String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from .config import db_string
 import bcrypt
-import requests
-import json
+from .models.user import User
+
 
 # creating a blueprint for auth file
 auth= Blueprint('auth', __name__)
@@ -20,9 +20,9 @@ session = session()
 # create the declarative base
 Base = declarative_base()
 
-
 @auth.route('/signup', methods=['POST','GET'])
 def sign_up():
+    session.rollback()
     # configuring bcrypt requirements
     salt = bcrypt.gensalt(rounds=8)
     if request.method == 'POST':
@@ -49,8 +49,12 @@ def sign_up():
         return redirect(url_for('auth.login'))
     return render_template("sign-up.html")
 
-@auth.route('/login')
+@auth.route('/login', methods=['POST','GET'])
 def login():
+    return render_template('login.html')
+
+@auth.route('/logvalidate', methods=['POST','GEt'])
+def login_validate():
     username = request.form['username']
     password = request.form['password']
 

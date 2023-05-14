@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,52 @@
     <link rel="stylesheet" href="{{url_for('static', filename ='app.css')}}">
     <title>Document</title>
 </head>
+
 <body>
-    This is the home we belongeth
+    <div class="dashboard">
+        <nav>
+            <div class="">
+                <h1>W<i class="fa-solid fa-gear fa-spin"></i>Ling</h1>
+            </div>
+            <div class=" dash-nav-btns">
+                <form action="/detect-anomaly">
+                    <button><i class="fa-solid fa-power-off"></i> Start</button>
+                </form>
+                <form action="/graph">
+                    <button><i class="fa-solid fa-chart-line"></i> Graph</button>
+                </form>
+                <form action="/logout">
+                    <button><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+                </form>
+            </div>
+        </nav>
+        <div class="dash-content">
+            <div class="dashboard-left">
+                <h2>Welcome {{name}}!</h2>
+            </div>
+            <div class="dashboard-right">
+                <h2>Dashboard</h2>
+                <table>
+                    <thead>
+                        <td>Time</td>
+                        <td>Count</td>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr>
+                            <td>{{row["time"]}}</td>
+                            <td>{{row["count"]}}</td>
+                        </tr>
+                        {% endfor %}
+                </table>
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Copyright&copy;2023|All Rights Reserved</p>
+        </div>
+    </div>
 </body>
+
 </html>

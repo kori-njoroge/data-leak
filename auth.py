@@ -94,6 +94,7 @@ def login_validate():
     return render_template('login.html')
 
 # Logout route
+@auth.route('/logout', methods=['GET'])
 def logout():
     # session.pop('logged_in', None)
     return redirect(url_for('auth.login'))

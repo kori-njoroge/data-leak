@@ -1,0 +1,1 @@
+sudo tail -n 500 /var/log/auth.log >syslogs.csv    ==> command to extract system files and save them to a csv file

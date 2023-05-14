@@ -52,6 +52,7 @@ body{
     text-align: center;
     padding: 2vw;
     background-color: rgb(66, 71, 78);
+    /* background-color: rgb(176, 180, 184); */
     margin-top: 9vh;
     font-size: 1.8rem;
     padding-bottom: 10vh;
@@ -71,6 +72,7 @@ body{
     border: none;
     background-color: #0d6efd;
     padding:2vh 2vw;
+    font-size: 1.2rem;
 }
 .btns button:hover{
     color: white;
@@ -90,7 +92,8 @@ body{
     padding-bottom: 5vh;
     height: fit-content;
     border-radius: 5px;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 4px 0px rgba(86, 98, 104, 0.5);
+    background-color: rgb(176, 180, 184);
 }
 
 .singup-form form {
@@ -116,6 +119,7 @@ label {
     height: 4.5vh;
     width: 100%;
     outline: none;
+    background-color: transparent;
 }
 
 .singup-form form input:focus,
@@ -129,7 +133,15 @@ label {
     height: 98%;
     margin-left: 55%;
     margin-right: -55%;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 15px;
     cursor: pointer;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    transition: transform .3s ease-in;
+}
+.singup-form form button:hover{
+transform: scale(1.1);
 }

@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='app.css')}}">
     <title>Document</title>
 </head>
+
 <body>
-    <i class="fa-solid fa-gear fa-spin fa-2x"></i>
+    <div class="landing-page">
+        <nav class="landing-nav">
+            <div class="">
+                <i class="fa-solid fa-gear fa-spin fa-3x"></i>
+            </div>
+            <div class="links">
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Register</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+        </nav>
+        <div class="content-card">
+            <i class="fa-solid fa-gear fa-spin"></i>
+            <h1>-----------WeLing---------</h1>
+            <p>Welcome to WeLing data leak detection system <br>
+                Your data security our priority
+            </p>
+        </div>
+    </div>
 </body>
+
 </html>

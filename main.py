@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, request, redirect,flash
+from flask import Blueprint, render_template, url_for, request, redirect
 from .anomalies import detect_anomaly
 import pandas as pd
 
@@ -10,7 +10,7 @@ def home():
 
 @main.route('/dashboard')
 def dashboard():
-    return 'home'
+    return render_template('home.html')
 
 @main.route('/detect-anomaly', methods=['POST','GET'])
 def run_anomaly_detection():

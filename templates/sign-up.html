@@ -11,25 +11,38 @@
 </head>
 
 <body>
-    <div class="singup-form">
-        <i class="fa-solid fa-gear fa-spin fa-3x"></i>
-        <form action="/signup" method="post">
+    <div class="landing-page">
+        <nav class="landing-nav">
             <div class="">
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required>
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" required>
-                <label for="role">Role:</label>
-                <input type="text" name="role" id="role" required>
+                <i class="fa-solid fa-gear fa-spin fa-3x"></i>
             </div>
-            <div class="">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" required>
-                <label for="confpass">Confirm Password:</label>
-                <input type="password" name="confpass" id="confpass" required>
+            <div class="links">
+                <a href="/">Home</a>
+                <a href="/signup">Register</a>
+                <a href="/login">Login</a>
+                <a href="/contact">Contact Us</a>
             </div>
-            <button>Submit</button>
-        </form>
+        </nav>
+        <div class="singup-form">
+            <i class="fa-solid fa-gear fa-spin fa-3x"></i>
+            <form action="/signup" method="post">
+                <div class="">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" required>
+                    <label for="role">Role:</label>
+                    <input type="text" name="role" id="role" required>
+                </div>
+                <div class="">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                    <label for="confpass">Confirm Password:</label>
+                    <input type="password" name="confpass" id="confpass" required>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
     </div>
 </body>
 

@@ -11,19 +11,32 @@
 </head>
 
 <body>
-    <div class="singup-form">
-        <i class="fa-solid fa-gear fa-spin fa-3x"></i>
-        <form action="/logvalidate" method="post">
+    <div class="landing-page">
+        <nav class="landing-nav">
             <div class="">
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" required>
+                <i class="fa-solid fa-gear fa-spin fa-3x"></i>
             </div>
-            <div class="">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" required>
+            <div class="links">
+                <a href="/">Home</a>
+                <a href="/signup">Register</a>
+                <a href="/login">Login</a>
+                <a href="/contact">Contact Us</a>
             </div>
+        </nav>
+        <div class="singup-form">
+            <i class="fa-solid fa-gear fa-spin fa-2x"></i>
+            <form action="/logvalidate" method="post">
+                <div class="">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+                <div class="">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
                 <button>Submit</button>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 

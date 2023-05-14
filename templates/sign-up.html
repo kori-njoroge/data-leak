@@ -16,19 +16,19 @@
         <form action="/signup" method="post">
             <div class="">
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" required>
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" required>
                 <label for="role">Role:</label>
-                <input type="text" name="role" id="role">
+                <input type="text" name="role" id="role" required>
             </div>
             <div class="">
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
                 <label for="confpass">Confirm Password:</label>
-                <input type="password" name="confpass" id="confpass">
+                <input type="password" name="confpass" id="confpass" required>
             </div>
-                <button>Submit</button>
+            <button>Submit</button>
         </form>
     </div>
 </body>

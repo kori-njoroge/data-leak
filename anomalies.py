@@ -40,7 +40,7 @@ def detect_anomaly(data):
     ax.set_xlabel('Sample Number')
     ax.set_ylabel(count)
     ax.legend()
-    # plt.show()
+    plt.show()
 
     # Detect anomalies
     anomalies = []

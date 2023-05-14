@@ -2,11 +2,20 @@ from flask import Blueprint, render_template, url_for,redirect,flash,request
 from sqlalchemy import create_engine, Column, Integer,String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from .config import db_string
+from dotenv import load_dotenv
 import bcrypt
+import easygui
+import os
+
+# mail imports
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+from .config import db_string
 from .models.user import User
 
-
+load_dotenv()
 # creating a blueprint for auth file
 auth= Blueprint('auth', __name__)
 
@@ -20,6 +29,14 @@ session = session()
 # create the declarative base
 Base = declarative_base()
 
+# EMAIL SENDER CONFIGURATIONS
+# SMTP server details
+smtp_server = 'smtp.gmail.com'
+smtp_port = 587  
+smtp_username = os.environ.get('EMAIL')
+smtp_password = os.environ.get('EMAILPWD')
+
+
 @auth.route('/signup', methods=['POST','GET'])
 def sign_up():
     session.rollback()
@@ -31,26 +48,30 @@ def sign_up():
         username = request.form['username']
         role = request.form['role']
         password = request.form['password']
+        conpassword = request.form['confpass']
 
         # hashing the password
         hash = bcrypt.hashpw(password.encode('utf-8'), salt)
+        if password == conpassword :
+            # create a user object
+            user = User(
+                email = email,
+                username =username,
+                role = role,
+                password = hash
+            )
 
-        # create a user object
-        user = User(
-            email = email,
-            username =username,
-            role = role,
-            password = hash
-        )
-
-        # add new use to db
-        session.add(user)
-        session.commit()
-        return redirect(url_for('auth.login'))
+            # add new use to db
+            session.add(user)
+            session.commit()
+            return redirect(url_for('auth.login'))
+        else:
+            easygui.msgbox('Passwords do not match')
     return render_template("sign-up.html")
 
 @auth.route('/login', methods=['POST','GET'])
 def login():
+    flash('Welcome to Login')
     return render_template('login.html')
 
 @auth.route('/logvalidate', methods=['POST','GEt'])
@@ -62,10 +83,11 @@ def login_validate():
     if user.count() > 0:
         user = user.first()
         if bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
-            flash(f"Welcom {username}")
-            return redirect(url_for('main.home'))
+            easygui.msgbox(f"Welcome {username}")
+            return redirect(url_for('main.dashboard'))
         else:
             flash('Wrong credentials')
+            easygui.msgbox('Wrong credentials')
     else:
         flash(f"User with username ({username}) not found")
     return render_template('login.html')

@@ -11,6 +11,10 @@ import statsmodels.graphics.tsaplots as sgt
 import matplotlib.pyplot as plt
 import os
 from dotenv import load_dotenv
+import pygame
+from playsound import playsound
+import time
+
 
 load_dotenv()
 
@@ -36,7 +40,7 @@ def detect_anomaly(data):
     ax.set_xlabel('Sample Number')
     ax.set_ylabel(count)
     ax.legend()
-    # plt.show()
+    plt.show()
 
     # Detect anomalies
     anomalies = []
@@ -46,7 +50,6 @@ def detect_anomaly(data):
     
     # Send notification
     if len(anomalies) > 0:
-        print("--------------------",anomalies)
         send_email_notification(anomalies)
 
 
@@ -61,7 +64,6 @@ def send_email_notification(anomalies):
         Time = '_time'
         Value = 'Count of 1682446202.21'
         message += f"{anomaly[Time].strftime('%Y-%m-%d %H:%M:%S')}: {anomaly[Value]}\n"
-        # print("Hiiiii***************************")
     
     # Send email
     msg = MIMEText(message)
@@ -74,3 +76,11 @@ def send_email_notification(anomalies):
     server.login(from_address,os.environ.get('MAILER_PWD'))
     server.sendmail(from_address, to_address, msg.as_string())
     server.quit()
+
+    # pygame alert
+    pygame.init()
+    pygame.mixer.music.load('/home/corey/Documents/data-leak/alert.mp3')
+    pygame.mixer.music.play()
+    time.sleep(4)
+    pygame.mixer.music.stop()
+

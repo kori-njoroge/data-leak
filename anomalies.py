@@ -40,7 +40,7 @@ def detect_anomaly(data):
     ax.set_xlabel('Sample Number')
     ax.set_ylabel(count)
     ax.legend()
-    plt.show()
+    # plt.show()
 
     # Detect anomalies
     anomalies = []
@@ -84,3 +84,27 @@ def send_email_notification(anomalies):
     time.sleep(4)
     pygame.mixer.music.stop()
 
+
+def detect_anomaly_graph(data):
+    # Set up the SPC chart
+    count = 'Count of 1682446202.21'
+    # Calculate the mean and standard deviation of the data
+    mean = data[count].mean()
+    std_dev = data[count].std()
+
+    # Calculate the upper and lower control limits
+    ucl = mean + 3 * std_dev
+    lcl = mean - 3 * std_dev
+
+    control_limits = (lcl,ucl)
+
+    # Create the SPC chart
+    fig, ax = plt.subplots()
+    ax.plot(data[count], 'bo-', markersize=4)
+    ax.axhline(y=mean, color='r', linestyle='--', linewidth=1, label='Mean')
+    ax.axhline(y=ucl, color='g', linestyle='--', linewidth=1, label='UCL')
+    ax.axhline(y=lcl, color='g', linestyle='--', linewidth=1, label='LCL')
+    ax.set_xlabel('Sample Number')
+    ax.set_ylabel(count)
+    ax.legend()
+    plt.show()

@@ -84,6 +84,7 @@ def login_validate():
         user = user.first()
         if bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
             easygui.msgbox(f"Welcome {username}")
+            # session['logged_in'] = True
             return redirect(url_for('main.dashboard'))
         else:
             flash('Wrong credentials')
@@ -91,3 +92,8 @@ def login_validate():
     else:
         flash(f"User with username ({username}) not found")
     return render_template('login.html')
+
+# Logout route
+def logout():
+    # session.pop('logged_in', None)
+    return redirect(url_for('auth.login'))

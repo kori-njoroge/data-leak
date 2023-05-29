@@ -7,3 +7,4 @@ class User(db.Model):
     role= db.Column(db.String(100), nullable=False)
     approved = db.Column(db.String(100))
     password = db.Column(db.String(255), nullable=False)
+

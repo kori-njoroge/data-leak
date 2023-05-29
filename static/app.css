@@ -169,85 +169,252 @@ label {
     padding: 0vh 2vw;
     background-color: rgb(176, 180, 184);
 }
-.dash-nav-btns{
+
+.dash-nav-btns {
     display: flex;
 }
 
-.dashboard button{
+.dashboard button {
     padding: 1.3vh 1.5vw;
     font-size: .9rem;
     font-weight: 500;
-    background-color:  #428af7;
+    background-color: #428af7;
     border: none;
     border-radius: 3px;
     transition: transform .3s ease-in;
     margin-right: 2vh;
 }
-.dashboard button:hover{
+
+.dashboard button:hover {
     transform: scale(1.1);
     border: 1px solid white;
 }
 
-.dash-content{
+.dash-content {
+    padding: 1vh 2vw;
+    height: 80vh;
+}
+
+/* .dashboard-left {
     display: flex;
     justify-content: space-between;
-    padding: 0vh 1vw;
-}
+} */
 
-
-table{
-    /* width:50%; */
+table {
     border: 1px solid;
     border-collapse: collapse;
-    /* background-color: white; */
+    width: 50%;
 }
-th{
+
+thead {
     height: 30px;
     border-bottom: 1px solid;
     border-left: 1px solid white;
     text-align: left;
-    padding-left: 5px; 
-    background-color: rgb(176, 142, 209);
+    padding-left: 5px;
+    /* background-color: rgb(176, 142, 209); */
+    background-color: #6199ec;
     color: black;
+    font-weight: 500;
 }
-td{
-    padding-left: 5px; 
-    border-left: 2px solid white;
+
+.table-section {
+    height: 64vh;
+    width: 110%;
+    overflow: auto;
+}
+
+td {
+    padding-left: 5px;
+    border-left: 1px solid black;
     border-bottom: 1px solid;
     word-wrap: break-word;
 }
-tr:nth-child(even) {background-color: #f2f2f2;}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* stop button */
+.stop-process button {
+    background-color: red;
+}
+
+.forgot-password {
+    font-size: 12px;
+    float: right;
+    margin-top: .5vh;
+    color: purple;
+}
+
+.login-password-container {
+    position: relative;
+
+}
+
+.togglePassword {
+    color: gray;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+}
+
+.forgot-form {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 2vh 2vw;
+    padding-bottom: 5vh;
+    height: fit-content;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px rgba(86, 98, 104, 0.5);
+    background-color: rgb(176, 180, 184);
+}
+
+.forgot-form label {
+    display: block;
+    margin: .5vh 0vw;
+}
 
 
+.forgot-form input {
+    width: 70%;
+    height: 5vh;
+    font-size: 14px;
+    padding: 0vh .5vw;
+    border-radius: 3px;
+    border: none;
+}
+
+.forgot-form button {
+    padding: 1.3vh 1.5vw;
+    font-size: .9rem;
+    font-weight: 500;
+    background-color: #428af7;
+    border: none;
+    border-radius: 3px;
+    transition: transform .3s ease-in;
+    margin-top: 2vh;
+}
+
+.forgot-form button:hover {
+    transform: scale(1.1);
+}
 
 
+.forgot-form form .add-code input {
+    text-align: center;
+    width: 35%;
+    margin: auto;
+}
 
+span {
+    color: blue;
+    font-size: smaller;
+}
 
+.add-code {
+    text-align: center;
+}
 
+.message {
+    color: red;
+    font-size: 12px;
+}
+.reset-password{
+    width: 80%;
+    text-align: left;
+    margin: auto;
+    padding-left: 3vw;
+    position: relative;
+}
+.reset-password input{
+    width: 90%;
+}
 
+.reset-password label{
+    margin-top: 1.2vh;
+    font-size: 14px;
+}
 
+.reset-password-eye{
+    color: grey;
+    position: absolute;
+    right: 8%;
+    top: 25%;
+}
 
+.reset-password-eye2{
+    color: grey;
+    position: absolute;
+    right: 8%;
+    top: 51%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.footer{
+.footer {
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
-.footer p{
+
+.footer p {
     font-size: 13px;
     font-weight: 700;
+}
+
+/* home dahsboard */
+.dahsboard-left-h1{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.dahsboard-left-h1 .fa-bars{
+    font-size: 2.3rem;
+    color: rgb(43, 43, 43);
+    margin-right: 1vh;
+}
+.dahsboard-left-h1 .fa-bars:hover{
+    color: grey;
+}
+.dahsboard-left-h1 button:hover{
+    border: none;
+}
+
+.message-error{
+    /* position: absolute; */
+    font-size: 15px;
+    /* right: 5%; */
+
+}
+
+.eye-signup{
+    position: absolute;
+    right: 0;
+}
+
+.text-area{
+    width: 90%;
+    background-color: transparent;
+    border: 1px solid white;
+}
+.contact-btn{
+    width: 100%;
+    margin: 0;
+}
+.contact-btn button{
+    width: 30%;
+    padding: 1vh 0vw;
+}
+.socials-contact{
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials-contact div h4{
+    margin: 0;
+}
+.socials-contact div small{
+    display: block;
 }

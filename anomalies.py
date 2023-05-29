@@ -56,7 +56,7 @@ def detect_anomaly(data):
 def send_email_notification(anomalies):
     # Set up email notification
     from_address = os.environ.get('MAILER_EMAIL')
-    to_address = 'korinjoroge63@gmail.com'
+    to_address = 'Welburling@gmail.com'
     subject = 'Anomaly detected'
     message = 'Anomalies were detected at the following times:\n\n'
     
@@ -79,6 +79,7 @@ def send_email_notification(anomalies):
 
     # pygame alert
     pygame.init()
+    # pygame.mixer.music.load('/home/welbur/Documents/data-leak/alert.mp3')
     pygame.mixer.music.load('/home/corey/Documents/data-leak/alert.mp3')
     pygame.mixer.music.play()
     time.sleep(4)

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='app.css')}}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="landing-page">
+        <nav class="landing-nav">
+            <div class="">
+                <i class="fa-solid fa-gear fa-spin fa-3x"></i>
+            </div>
+            <div class="links">
+                <a href="/">Home</a>
+                <a href="/signup">Register</a>
+                <a href="/login">Login</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+        </nav>
+        <div class="singup-form">
+            <i class="fa-solid fa-gear fa-spin fa-2x"></i>
+            <form action="/comment" method="post">
+                <div class="">
+                    <label for="email">Email or Phone Number</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your details" required>
+                    <label for="comment">Comment</label>
+                    <textarea class="text-area" id="comment" name="comment" cols="40" rows="6" required></textarea>
+                    <p style="margin: 0; font-size: 13px; color: rgb(8, 109, 8);">{{message}}</p>
+                    <label for="email2">Or <a href="mailto:ling.fyp.leakage@gmail.com?subject=Contact%20Us&body=This%20is%20the%20body%20of%20the%20email.">send us an email</a></label>
+                    <div class="contact-btn">
+                        <button>Submit</button>
+                    </div>
+                    <div class="socials-contact">
+                        <div style="margin: 0;" class="">
+                            <h4>Address</h4>
+                            <small>123 Orchard Road</small>
+                            <small>Singapore</p>
+                        </div>
+                        <div class="">
+                            <h4>Contacts</h4>
+                            <small>Email: ling.fyp.leakage@gmail.com</small>
+                            <small>Tell:  +65000000</small>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+            <br>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/show_password.js') }}"></script>
+</body>
+
+</html>

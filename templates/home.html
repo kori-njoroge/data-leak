@@ -15,11 +15,19 @@
     <div class="dashboard">
         <nav>
             <div class="">
-                <h1>W<i class="fa-solid fa-gear fa-spin"></i>Ling</h1>
+                <div class="dahsboard-left-h1">
+                    <form action="/change-password">
+                        <button style="visibility: none; background-color: transparent; padding: 0; border: none;"><i class="fa-solid fa-bars " title="Reset Password"></i></button>
+                    </form>
+                    <h1> W<i class="fa-solid fa-gear fa-spin"></i>Ling</h1>
+                </div>
             </div>
             <div class=" dash-nav-btns">
                 <form action="/detect-anomaly">
                     <button><i class="fa-solid fa-power-off"></i> Start</button>
+                </form>
+                <form class="stop-process" action="/dashboard">
+                    <button><i class="fa-solid fa-stop"></i> Stop</button>
                 </form>
                 <form action="/graph">
                     <button><i class="fa-solid fa-chart-line"></i> Graph</button>
@@ -32,23 +40,23 @@
         <div class="dash-content">
             <div class="dashboard-left">
                 <h2>Welcome {{name}}!</h2>
-            </div>
-            <div class="dashboard-right">
                 <h2>Dashboard</h2>
+            </div>
+            <h3>System logs </h3>
+            <div class="table-section">
                 <table>
                     <thead>
                         <td>Time</td>
                         <td>Count</td>
                     </thead>
-                    <tbody>
+                    <tbody class="tbody-content">
                         {% for row in rows %}
                         <tr>
                             <td>{{row["time"]}}</td>
                             <td>{{row["count"]}}</td>
                         </tr>
                         {% endfor %}
-                </table>
-                </tbody>
+                    </tbody>
                 </table>
             </div>
         </div>

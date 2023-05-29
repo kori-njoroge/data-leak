@@ -35,15 +35,26 @@
                     <input type="text" name="role" id="role" required>
                 </div>
                 <div class="">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" required>
-                    <label for="confpass">Confirm Password:</label>
-                    <input type="password" name="confpass" id="confpass" required>
+                    <div class="login-password-container">
+                        <label for="password">Password:</label>
+                        <i class="fa-solid fa-eye eye-signup" id="togglePassword"></i>
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div class="login-password-container">
+                        <label for="confpass">Confirm Password:</label>
+                        <input type="password" name="confpass" id="confpass" required>
+                        <small>
+                            {% for mess in message %}
+                            <li>{{mess}}</li>
+                            {% endfor %}
+                        </small>
+                    </div>
                 </div>
                 <button>Submit</button>
             </form>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='js/show_password.js') }}"></script>
 </body>
 
 </html>
